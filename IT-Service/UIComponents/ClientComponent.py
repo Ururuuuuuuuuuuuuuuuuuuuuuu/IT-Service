@@ -17,11 +17,12 @@ class ClientComponent(QtWidgets.QDialog):
         self.user = user
 
         self.ui.order_button.clicked.connect(self.order_button_clicked)
+        self.ui.redirect_button_login.clicked.connect(self.redirect_to_login)
 
     def setup_database_connection(self, client):
-        self.client = client
-        self.database = self.client["IT-Service"]
-        self.collection = self.database["orders"]
+        client = client
+        database = client["IT-Service"]
+        self.collection = database["orders"]
 
     def order_button_clicked(self):
         order = self.ui.order_line.text()
@@ -33,7 +34,17 @@ class ClientComponent(QtWidgets.QDialog):
             return
 
         try:
+            print({"nameorder": order, "equipment": equipment, "description": description, "customer": self.user.name, "email": self.user.email})
             self.collection.insert_one({"nameorder": order, "equipment": equipment, "description": description, "customer": self.user.name, "email": self.user.email})
             print("Заказ успешно добавлен")
+        except Exception as e:
+            print(e)
+
+    def redirect_to_login(self):
+        from UIComponents.LoginComponent import LoginComponent
+        try:
+            self.close()
+            component = LoginComponent()
+            component.exec()
         except Exception as e:
             print(e)

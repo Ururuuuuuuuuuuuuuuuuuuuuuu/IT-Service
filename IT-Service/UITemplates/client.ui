@@ -19,69 +19,167 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+	background-color:white;
+}
+
+QLabel{
+	font-family: Arial;
+	font-size: 14px;
+}
+
+QPushButton{
+	background-color: #ed5684;
+	color: white;
+	min-height:30px;
+	border-radius: 20px;
+}
+
+QLineEdit{
+	border: 1px solid #d0d0d0;
+	border-radius: 20px;
+}</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
-   <item>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <property name="spacing">
-      <number>0</number>
-     </property>
-     <item>
-      <widget class="QLineEdit" name="order_line">
-       <property name="styleSheet">
-        <string notr="true">min-height:30px;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>ORDER</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="equipment_line">
-       <property name="styleSheet">
-        <string notr="true">min-height:30px;</string>
-       </property>
-       <property name="placeholderText">
-        <string>EQUIPMENT</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTextBrowser" name="descriprion_area">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>100</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>250</height>
-        </size>
-       </property>
-       <property name="readOnly">
-        <bool>false</bool>
-       </property>
-       <property name="placeholderText">
-        <string>DESCRIPTION</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QPushButton" name="order_button">
-         <property name="text">
-          <string>Make an order</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
+   <item alignment="Qt::AlignVCenter">
+    <widget class="QFrame" name="dasdasd">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Техніка</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="order_line">
+            <property name="styleSheet">
+             <string notr="true">min-height:30px;</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <item alignment="Qt::AlignLeft">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Модель</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="equipment_line">
+            <property name="styleSheet">
+             <string notr="true">min-height:30px;</string>
+            </property>
+            <property name="placeholderText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <property name="spacing">
+           <number>5</number>
+          </property>
+          <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>Опишіть вашу проблему</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="descriprion_area">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>250</height>
+             </size>
+            </property>
+            <property name="readOnly">
+             <bool>false</bool>
+            </property>
+            <property name="placeholderText">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <property name="spacing">
+         <number>12</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="order_button">
+          <property name="text">
+           <string>Зробити замовлення</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="redirect_button_login">
+          <property name="text">
+           <string>Перейти до входу</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>

@@ -32,6 +32,6 @@ class Ui_Master(object):
 
     def retranslateUi(self, Master):
         _translate = QtCore.QCoreApplication.translate
-        Master.setWindowTitle(_translate("Master", " "))
+        Master.setWindowTitle(_translate("Master", "Dialog"))
 
 

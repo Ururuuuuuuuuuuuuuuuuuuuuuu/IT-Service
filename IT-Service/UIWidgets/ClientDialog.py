@@ -16,44 +16,101 @@ class Ui_Client(object):
         Client.setObjectName("Client")
         Client.resize(400, 600)
         Client.setMinimumSize(QtCore.QSize(400, 600))
+        Client.setStyleSheet("QDialog{\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"    font-family: Arial;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"    background-color: #ed5684;\n"
+"    color: white;\n"
+"    min-height:30px;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"    border: 1px solid #d0d0d0;\n"
+"    border-radius: 20px;\n"
+"}")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(Client)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.dasdasd = QtWidgets.QFrame(Client)
+        self.dasdasd.setObjectName("dasdasd")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.dasdasd)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.order_line = QtWidgets.QLineEdit(Client)
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_3.setSpacing(12)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setContentsMargins(-1, -1, -1, 0)
+        self.verticalLayout_4.setSpacing(5)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.label_3 = QtWidgets.QLabel(self.dasdasd)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_4.addWidget(self.label_3, 0, QtCore.Qt.AlignLeft)
+        self.order_line = QtWidgets.QLineEdit(self.dasdasd)
         self.order_line.setStyleSheet("min-height:30px;")
         self.order_line.setText("")
+        self.order_line.setPlaceholderText("")
         self.order_line.setObjectName("order_line")
-        self.verticalLayout.addWidget(self.order_line)
-        self.equipment_line = QtWidgets.QLineEdit(Client)
+        self.verticalLayout_4.addWidget(self.order_line)
+        self.verticalLayout_3.addLayout(self.verticalLayout_4)
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_8.setSpacing(5)
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.label = QtWidgets.QLabel(self.dasdasd)
+        self.label.setObjectName("label")
+        self.verticalLayout_8.addWidget(self.label, 0, QtCore.Qt.AlignLeft)
+        self.equipment_line = QtWidgets.QLineEdit(self.dasdasd)
         self.equipment_line.setStyleSheet("min-height:30px;")
+        self.equipment_line.setPlaceholderText("")
         self.equipment_line.setObjectName("equipment_line")
-        self.verticalLayout.addWidget(self.equipment_line)
-        self.descriprion_area = QtWidgets.QTextBrowser(Client)
+        self.verticalLayout_8.addWidget(self.equipment_line)
+        self.verticalLayout_3.addLayout(self.verticalLayout_8)
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_9.setSpacing(5)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.label_2 = QtWidgets.QLabel(self.dasdasd)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_9.addWidget(self.label_2, 0, QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.descriprion_area = QtWidgets.QTextBrowser(self.dasdasd)
         self.descriprion_area.setMinimumSize(QtCore.QSize(0, 100))
         self.descriprion_area.setMaximumSize(QtCore.QSize(16777215, 250))
         self.descriprion_area.setReadOnly(False)
+        self.descriprion_area.setPlaceholderText("")
         self.descriprion_area.setObjectName("descriprion_area")
-        self.verticalLayout.addWidget(self.descriprion_area)
-        self.horizontalLayout = QtWidgets.QHBoxLayout()
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.order_button = QtWidgets.QPushButton(Client)
+        self.verticalLayout_9.addWidget(self.descriprion_area)
+        self.verticalLayout_3.addLayout(self.verticalLayout_9)
+        self.verticalLayout.addLayout(self.verticalLayout_3)
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_5.setSpacing(12)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.order_button = QtWidgets.QPushButton(self.dasdasd)
         self.order_button.setObjectName("order_button")
-        self.horizontalLayout.addWidget(self.order_button)
-        self.verticalLayout.addLayout(self.horizontalLayout)
-        self.verticalLayout_2.addLayout(self.verticalLayout)
+        self.verticalLayout_5.addWidget(self.order_button)
+        self.redirect_button_login = QtWidgets.QPushButton(self.dasdasd)
+        self.redirect_button_login.setObjectName("redirect_button_login")
+        self.verticalLayout_5.addWidget(self.redirect_button_login)
+        self.verticalLayout.addLayout(self.verticalLayout_5)
+        self.verticalLayout_2.addWidget(self.dasdasd, 0, QtCore.Qt.AlignVCenter)
 
         self.retranslateUi(Client)
         QtCore.QMetaObject.connectSlotsByName(Client)
 
     def retranslateUi(self, Client):
         _translate = QtCore.QCoreApplication.translate
-        Client.setWindowTitle(_translate("Client", " "))
-        self.order_line.setPlaceholderText(_translate("Client", "Техніка"))
-        self.equipment_line.setPlaceholderText(_translate("Client", "Модель"))
-        self.descriprion_area.setPlaceholderText(_translate("Client", "Опишіть вашу проблему"))
+        Client.setWindowTitle(_translate("Client", "Dialog"))
+        self.label_3.setText(_translate("Client", "Техніка"))
+        self.label.setText(_translate("Client", "Модель"))
+        self.label_2.setText(_translate("Client", "Опишіть вашу проблему"))
         self.order_button.setText(_translate("Client", "Зробити замовлення"))
+        self.redirect_button_login.setText(_translate("Client", "Перейти до входу"))
 
 
 if __name__ == "__main__":

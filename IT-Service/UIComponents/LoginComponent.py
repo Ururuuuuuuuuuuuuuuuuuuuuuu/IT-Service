@@ -1,8 +1,11 @@
 from PyQt5 import QtWidgets, QtCore
 
+import Redirector
 from DatabaseConnector import DatabaseThread
 from UIComponents.ClientComponent import ClientComponent
 from UIComponents.MasterComponent import MasterComponent
+
+
 from UIWidgets.LoginDialog import Ui_Login
 from User import User
 
@@ -25,6 +28,7 @@ class LoginComponent(QtWidgets.QDialog):
         self.user = None
 
         self.ui.login_button.clicked.connect(self.login_button_clicked)
+        self.ui.redirect_button_register.clicked.connect(self.redirect_to_register)
 
     def setup_database_connection(self, client):
         database = client["IT-Service"]
@@ -47,12 +51,16 @@ class LoginComponent(QtWidgets.QDialog):
             print("Вы успешно вошли")
             self.user = User(data["email"], data["name"], data["user_root"])
 
+            print(data)
+
             if self.user.user_root == "admin":
                 self.redirect_to_master(self.user)
             elif self.user.user_root == "client":
                 self.redirect_to_client(self.user)
         else:
             print("Неверный логин или пароль")
+
+
 
     def redirect_to_master(self, user):
         self.close()
@@ -62,4 +70,10 @@ class LoginComponent(QtWidgets.QDialog):
     def redirect_to_client(self, user):
         self.close()
         component = ClientComponent(user)
+        component.exec()
+
+    def redirect_to_register(self):
+        from UIComponents.RegisterComponent import RegisterComponent
+        self.close()
+        component = RegisterComponent()
         component.exec()

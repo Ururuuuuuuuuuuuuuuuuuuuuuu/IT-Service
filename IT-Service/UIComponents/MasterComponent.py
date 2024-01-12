@@ -14,7 +14,7 @@ class MasterComponent(QtWidgets.QDialog):
         self.ui.setupUi(self)
 
         self.model = QStandardItemModel(self)
-        self.model.setHorizontalHeaderLabels(["Техніка", "Модель", "Проблема", "Замовник", "Номер телефону"])
+        self.model.setHorizontalHeaderLabels(["Заказ", "Техніка", "Опис", "Замовник", "Ім'я"])
 
         self.ui.orders_table.setModel(self.model)
         self.ui.orders_table.setSelectionBehavior(QTableView.SelectRows)

@@ -1,9 +1,10 @@
 from PyQt5 import QtWidgets
 
+import Redirector
 from DatabaseConnector import DatabaseThread
-from UIWidgets.RegisterDialog import Ui_Register
 
-from UIComponents.LoginComponent import LoginComponent
+
+from UIWidgets.RegisterDialog import Ui_Register
 
 
 class RegisterComponent(QtWidgets.QDialog):
@@ -39,11 +40,15 @@ class RegisterComponent(QtWidgets.QDialog):
             print("Заполните все поля")
             return
 
+        print(self.register_model)
         self.collection.insert_one(self.register_model)
         self.redirect_to_login()
 
     def redirect_to_login(self):
-        self.close()
-        component = LoginComponent()
-        component.exec()
-
+        from UIComponents.LoginComponent import LoginComponent
+        try:
+            self.close()
+            component = LoginComponent()
+            component.exec()
+        except Exception as e:
+            print(e)

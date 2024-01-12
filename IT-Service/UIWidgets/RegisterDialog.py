@@ -16,44 +16,115 @@ class Ui_Register(object):
         Register.setObjectName("Register")
         Register.resize(400, 500)
         Register.setMinimumSize(QtCore.QSize(400, 500))
+        Register.setStyleSheet("QDialog{\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QLabel{\n"
+"    font-family: Arial;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"    background-color: #ed5684;\n"
+"    color: white;\n"
+"    min-height:30px;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"\n"
+"QLineEdit{\n"
+"    border: 1px solid #d0d0d0;\n"
+"    border-radius: 20px;\n"
+"}")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(Register)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.asdasd = QtWidgets.QFrame(Register)
+        self.asdasd.setObjectName("asdasd")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.asdasd)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.email_line = QtWidgets.QLineEdit(Register)
+        self.label_4 = QtWidgets.QLabel(self.asdasd)
+        self.label_4.setMinimumSize(QtCore.QSize(0, 70))
+        self.label_4.setStyleSheet("font-size:26px;\n"
+"color: #ed5684;")
+        self.label_4.setObjectName("label_4")
+        self.verticalLayout.addWidget(self.label_4, 0, QtCore.Qt.AlignHCenter)
+        self.verticalFrame_4 = QtWidgets.QFrame(self.asdasd)
+        self.verticalFrame_4.setObjectName("verticalFrame_4")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.verticalFrame_4)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_3.setContentsMargins(-1, -1, -1, 5)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.label = QtWidgets.QLabel(self.verticalFrame_4)
+        self.label.setMinimumSize(QtCore.QSize(0, 0))
+        self.label.setObjectName("label")
+        self.verticalLayout_3.addWidget(self.label, 0, QtCore.Qt.AlignLeft)
+        self.email_line = QtWidgets.QLineEdit(self.verticalFrame_4)
         self.email_line.setStyleSheet("min-height:30px;")
+        self.email_line.setPlaceholderText("")
         self.email_line.setObjectName("email_line")
-        self.verticalLayout.addWidget(self.email_line)
-        self.name_line = QtWidgets.QLineEdit(Register)
+        self.verticalLayout_3.addWidget(self.email_line)
+        self.verticalLayout_6.addLayout(self.verticalLayout_3)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_4.setContentsMargins(-1, -1, -1, 5)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.label_2 = QtWidgets.QLabel(self.verticalFrame_4)
+        self.label_2.setObjectName("label_2")
+        self.verticalLayout_4.addWidget(self.label_2, 0, QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.name_line = QtWidgets.QLineEdit(self.verticalFrame_4)
         self.name_line.setStyleSheet("min-height:30px;")
+        self.name_line.setPlaceholderText("")
         self.name_line.setObjectName("name_line")
-        self.verticalLayout.addWidget(self.name_line)
-        self.password_line = QtWidgets.QLineEdit(Register)
+        self.verticalLayout_4.addWidget(self.name_line)
+        self.verticalLayout_6.addLayout(self.verticalLayout_4)
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_5.setContentsMargins(-1, -1, -1, 5)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.label_3 = QtWidgets.QLabel(self.verticalFrame_4)
+        self.label_3.setObjectName("label_3")
+        self.verticalLayout_5.addWidget(self.label_3, 0, QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.password_line = QtWidgets.QLineEdit(self.verticalFrame_4)
+        self.password_line.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
         self.password_line.setStyleSheet("min-height:30px;")
+        self.password_line.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.password_line.setPlaceholderText("")
         self.password_line.setObjectName("password_line")
-        self.verticalLayout.addWidget(self.password_line)
-        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.verticalLayout_5.addWidget(self.password_line)
+        self.verticalLayout_6.addLayout(self.verticalLayout_5)
+        self.verticalLayout.addWidget(self.verticalFrame_4, 0, QtCore.Qt.AlignVCenter)
+        self.asdasda = QtWidgets.QFrame(self.asdasd)
+        self.asdasda.setObjectName("asdasda")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.asdasda)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.login_redirect_button = QtWidgets.QPushButton(Register)
+        self.login_redirect_button = QtWidgets.QPushButton(self.asdasda)
         self.login_redirect_button.setObjectName("login_redirect_button")
         self.horizontalLayout.addWidget(self.login_redirect_button)
-        self.register_button = QtWidgets.QPushButton(Register)
+        self.register_button = QtWidgets.QPushButton(self.asdasda)
         self.register_button.setObjectName("register_button")
         self.horizontalLayout.addWidget(self.register_button)
-        self.verticalLayout.addLayout(self.horizontalLayout)
-        self.verticalLayout_2.addLayout(self.verticalLayout)
+        self.verticalLayout.addWidget(self.asdasda)
+        self.verticalLayout_2.addWidget(self.asdasd, 0, QtCore.Qt.AlignVCenter)
 
         self.retranslateUi(Register)
         QtCore.QMetaObject.connectSlotsByName(Register)
 
     def retranslateUi(self, Register):
         _translate = QtCore.QCoreApplication.translate
-        Register.setWindowTitle(_translate("Register", " "))
-        self.email_line.setPlaceholderText(_translate("Register", "Номер телефону"))
-        self.name_line.setPlaceholderText(_translate("Register", "Ім'я"))
-        self.password_line.setPlaceholderText(_translate("Register", "Пароль"))
-        self.login_redirect_button.setText(_translate("Register", "Вхід"))
-        self.register_button.setText(_translate("Register", "Реєстрація"))
+        Register.setWindowTitle(_translate("Register", "Dialog"))
+        self.label_4.setText(_translate("Register", "Реєстрація"))
+        self.label.setText(_translate("Register", "Номер телефону"))
+        self.label_2.setText(_translate("Register", "Імя"))
+        self.label_3.setText(_translate("Register", "Пароль"))
+        self.login_redirect_button.setText(_translate("Register", "Перейти до входу"))
+        self.register_button.setText(_translate("Register", "Зареєструватися"))
 
 
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Register = QtWidgets.QDialog()
+    ui = Ui_Register()
+    ui.setupUi(Register)
+    Register.show()
+    sys.exit(app.exec_())
